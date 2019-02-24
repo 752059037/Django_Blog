@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>登陆</title>
+    {% load static %}
+    {#    <link href="/static/css/login.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+
+<body>
+<div class="container-fluid"  style="margin-top: 5%">
+    <div class="row" >
+        <div class="col-md-offset-4 col-md-4 col-xs-8 col-xs-offset-2">
+            <img src="/static/images/qx.jpg" alt="" style="width: 40%" class="center-block">
+        <form class="form-signin" action="" method="post" novalidate>
+            {% csrf_token %}
+
+            <h3 class="form-signin-heading text-center">游客暂无权限哦~</h3>
+            <div>
+                <label for="">管理员账号</label>
+
+                    <input name="username" type="text" class="form-control">
+
+            </div>
+
+            <div>
+                <label for="">管理员密码</label>
+
+                    <input name="password" type="password" class="form-control">
+
+            </div>
+
+            <p style="color: red;font-size: 16px" class="text-center">{{ error_msg }}</p>
+            <br>
+                        <label>
+                <input type="checkbox" name="is_check" value="777"> 记住密码
+            </label>
+            <button class="btn btn-primary form-control" type="submit">登陆</button>
+        </form>
+    </div>
+        </div>
+</div>
+</body>
+</html>

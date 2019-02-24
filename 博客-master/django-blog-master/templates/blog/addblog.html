@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+    <title>添加文章 </title>
+{% endblock %}
+
+{% block content %}
+
+<section class="mysection" style="animation: fuxiasuo 0.8s;">
+
+<form action="" method="post">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% if id == '0'  %}添加文章{% else %}编辑文章
+    {% endif %}</h3>
+  </div>
+  <div class="panel-body">
+        {% for i in form_obj %}
+        <div>
+            <label for="{{ i.id_for_label }}">{{ i.label }}</label>
+            {{ i }}</div>
+    {% endfor %}
+      <br>
+  <button type="submit" class="btn btn-success form-control">添加</button>
+  </div>
+</div>
+</form>
+
+
+</section>
+
+{% endblock %}
